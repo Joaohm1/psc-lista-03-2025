@@ -1,0 +1,62 @@
+ import java.util.Scanner; 
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner scanner = new Scanner(System.in);
+	    
+	    
+	    System.out.println("Escolha 3 numeros distintos - ");
+	    
+	    
+		System.out.println("Digite o primiero : ");
+		double numeroUm = scanner.nextDouble();
+		
+		System.out.println("Digite o segundo : ");
+		double numeroDois = scanner.nextDouble();
+		
+		System.out.println("Digite o terceiro : ");
+		double numeroTres = scanner.nextDouble();
+		
+		double maior = numeroUm;
+		if (numeroDois > maior){
+		    maior = numeroDois;
+		}
+		
+		if (numeroTres > maior){
+		    maior = numeroTres;
+		}   
+		// menor numero 
+			double menor = numeroUm;
+		if (numeroDois < menor){
+		    menor = numeroDois;
+		}
+		
+		if (numeroTres < menor){
+		    menor = numeroTres;
+		    
+		    // media aritimedica
+		    
+		    double media =(numeroUm + numeroDois + numeroTres) / 3;
+		    
+		    System.out.println("Maior numero :" + maior);
+		     System.out.println("Menor numero :" + menor);
+		      System.out.println("Media numero :" + media);
+		      
+		      scanner.close();
+		     
+		    
+		    
+		    
+		
+		    
+		    
+		
+		}
+		
+		
+		
+		
+	}
+}

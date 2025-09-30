@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Código da operação (1=perímetro, 2=área, 3=volume): ");
+        int operacao = scanner.nextInt();
+
+        System.out.print("Raio: ");
+        double raio = scanner.nextDouble();
+
+        switch (operacao) {
+            case 1: // perímetro do círculo: 2πr
+                double perimetro = 2 * Math.PI * raio;
+                System.out.print("Perímetro do círculo = " + perimetro);
+                break;
+
+            case 2: // área do círculo: πr²
+                double area = Math.PI * raio * raio;
+                System.out.print("Área do círculo = " + area);
+                break;
+
+            case 3: // volume da esfera: (4/3)πr³
+                double volume = (4.0 / 3.0) * Math.PI * raio * raio * raio;
+                System.out.print("Volume da esfera = " + volume);
+                break;
+
+            default:
+                System.out.println("Código de operação inválido.");
+        }
+
+        scanner.close();
+    }
+}

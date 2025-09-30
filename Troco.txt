@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Lê valores em REAIS INTEIROS (sem centavos), já que a máquina só aceita notas
+        int valorCompra = lerInteiro(scanner, "Valor da compra (em reais, inteiro): ");
+        int valorPago   = lerInteiro(scanner, "Valor pago (em reais, inteiro): ");
+
+        if (valorPago < valorCompra) {
+            System.out.println("Quantia paga insuficiente para realizar a compra.");
+            scanner.close();
+            return;
+        }
+
+        int troco = valorPago - valorCompra;
+
+        if (troco == 0) {
+            System.out.println("Pagamento exato. Sem troco.");
+            scanner.close();
+            return;
+        }
+
+        System.out.println("Troco: R$ " + troco);
+        int[] notas = {50, 20, 10, 5, 2, 1};
+        int totalNotas = 0;
+
+        for (int nota : notas) {
+            int qtd = troco / nota;   // máximo de notas dessa denominação
+            troco = troco % nota;     // resto para as próximas notas
+            if (qtd > 0) {
+                System.out.println(qtd + " nota(s) de R$ " + nota);
+                totalNotas += qtd;
+            }
+        }
+
+        System.out.println("Total de notas: " + totalNotas);
+        scanner.close();
+    }
+
+    // Função auxiliar para garantir leitura de inteiro
+    private static int lerInteiro(Scanner scanner, String prompt) {
+        System.out.print(prompt);
+        while (!scanner.hasNextInt()) {
+            System.out.print("Por favor, digite um número INTEIRO (sem centavos): ");
+            scanner.next(); // descarta entrada inválida
+        }
+        return scanner.nextInt();
+    }
+}
+,

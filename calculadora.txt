@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Digite um numero:");
+		double numeroUm = scanner.nextDouble();
+		
+		
+		System.out.println("Escolha um sinal : + ; - ; / ; * ; ");
+		char sinal = scanner.next().charAt(0);
+		
+		
+		System.out.println("Digite um numero:");
+		double numeroDois = scanner.nextDouble();
+		
+		
+		switch(sinal){
+		    
+		  case '+': 
+		        double soma = numeroUm + numeroDois;
+		        System.out.println("A soma é :" + soma );
+		        break;
+		        
+		  case '-':
+		            double menos = numeroUm - numeroDois;
+		            System.out.println("A subtracao é :" + menos );
+		            break;
+		            
+		  case '/':         
+		      double divisao = numeroUm / numeroDois;
+		       System.out.println("A divisao é :" + divisao );
+		       break;
+		       
+          case '*': 
+		           double mult = numeroUm * numeroDois;
+		            System.out.println("A multiplicacao é :" + mult );
+		            break;
+		      
+		  
+		}
+		scanner.close();
+	}
+}
